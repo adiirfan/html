@@ -1,0 +1,114 @@
+$white : hsl(0, 0%, 100%) !default
+$body-size: 1em !default
+$body-rendering: optimizeLegibility !default
+$body-family: BlinkMacSystemFont, -apple-system, "Roboto", sans-serif !default
+$dark-grey: hsl(0, 0%, 29%) !default
+$light-grey:   hsl(0, 0%, 86%) !default
+$body-weight: 400 !default
+$body-line-height: 1.5 !default
+$margin-side: 250 / 1920 * 100% !default
+$break-small: 768px
+
+
+
+html
+  background-color: $white
+  font-size: $body-size
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  min-width: 300px
+  overflow-x: hidden
+  overflow-y: scroll
+  text-rendering: $body-rendering
+  text-size-adjust: 100%
+
+.navbar-fixed
+  left: 0
+  position: fixed
+  top: 0
+  right: 0
+  z-index: 30
+  display: flex
+  justify-content: flex-end
+  align-content: center
+  padding: 0em $margin-side
+  min-height: 50px
+  background-color: $light-grey
+  flex: none
+
+.navbar-container
+  align-content: center
+  justify-content: center
+  display: flex
+
+.navbar-content
+  margin: 15px 5px
+  -webkit-flex-align: center
+  -ms-flex-align: center
+  -webkit-align-items: center
+  align-items: center
+  justify-content: center
+  display: flex
+  text-align: center
+
+
+.input-nav
+  -moz-appearance: none
+  -webkit-appearance: none
+  align-items: center
+  border: 1px solid transparent
+  border-radius: 4px
+  display: inline-flex
+  @media only screen and (max-width: 768px)
+    height: 1.5em
+  height: 2.25em
+  justify-content: flex-start
+  line-height: 1.5
+  padding-left: calc(.625em - 1px)
+  padding-right: calc(.625em - 1px)
+  position: relative
+  vertical-align: top
+  margin-right: 15px
+  width: 100%
+  min-width: 170px
+
+.button-nav
+  cursor: pointer
+  justify-content: center
+  padding-bottom: .375em
+  padding-left: 2em
+  padding-right: 2em
+  padding-top: .375em
+  text-align: center
+  white-space: nowrap
+  background-color: orangered
+  color: $white
+  border: 1px solid transparent
+  border-radius: 4px
+  width: 100%
+
+
+@media only screen and (max-width: 768px)
+  html
+    font-size: 0.80em
+  .desktop
+    display : none
+  .mobile
+    display : block
+  .navbar-fixed
+    max-height: 100%
+    justify-content: center
+  .navbar-container
+    margin: 9px 5px
+    max-width: 100%
+    flex-direction: column
+  .navbar-content
+    margin: 3px 5px
+    max-width: 100%
+
+
+
+
+
+
+
