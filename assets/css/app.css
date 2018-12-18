@@ -1,6 +1,15 @@
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
 html {
   background-color: white;
   font-size: 1em;
+  font-family: BlinkMacSystemFont, -apple-system, "Roboto", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   min-width: 300px;
@@ -42,12 +51,11 @@ html {
   text-align: center;
 }
 
-.input-nav {
+.input {
   -moz-appearance: none;
   -webkit-appearance: none;
   align-items: center;
   border: 1px solid transparent;
-  border-radius: 4px;
   display: inline-flex;
   height: 2.25em;
   justify-content: flex-start;
@@ -56,17 +64,18 @@ html {
   padding-right: calc(.625em - 1px);
   position: relative;
   vertical-align: top;
-  margin-right: 15px;
-  width: 100%;
-  min-width: 170px;
 }
 @media only screen and (max-width: 768px) {
-  .input-nav {
+  .input {
     height: 1.5em;
   }
 }
 
-.button-nav {
+.input-nav {
+  margin-right: 15px;
+}
+
+.button {
   cursor: pointer;
   justify-content: center;
   padding-bottom: 0.375em;
@@ -75,11 +84,51 @@ html {
   padding-top: 0.375em;
   text-align: center;
   white-space: nowrap;
-  background-color: orangered;
   color: white;
   border: 1px solid transparent;
-  border-radius: 4px;
   width: 100%;
+}
+
+.button-nav {
+  background-color: orangered;
+}
+
+.slider-bar {
+  height: 350px;
+  width: 350px;
+  position: fixed;
+  bottom: 0px;
+  left: 2vw;
+  background-color: #dbdbdb;
+}
+
+.slider-closebtn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.slider-closebtn span {
+  margin: 5px 10px;
+}
+
+.slider-content {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 15px;
+}
+.slider-content .gap {
+  margin: 12px 0px;
+}
+
+.slider-btn {
+  background-color: dodgerblue;
+  margin-top: 15px;
+  padding: 15px 15px;
+}
+
+.slider-title {
+  font-size: 1.65em;
 }
 
 @media only screen and (max-width: 768px) {
@@ -109,6 +158,20 @@ html {
   .navbar-content {
     margin: 3px 5px;
     max-width: 100%;
+  }
+
+  .navbar-closebtn {
+    position: fixed;
+    top: 5px;
+    right: 15px;
+  }
+
+  .slider-bar {
+    width: 100vw;
+    min-height: 45vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 }
 
