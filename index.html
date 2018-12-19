@@ -5,11 +5,10 @@
     <title>Adi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="assets/css/app.css" rel="stylesheet">
-    <link href="assets/css/all.css" rel="stylesheet">
 </head>
 <body>
-<div>
-    <div class="navbar-fixed">
+<div id="scrolled">
+    <div class="navbar-fixed navbar-top" id="navbar">
         <div class="navbar-container">
             <div class="navbar-content">
                 <span>Mau voucher diskon belanja up to 70%</span>
@@ -19,13 +18,21 @@
                 <button class="button button-nav" >DAFTAR</button>
             </div>
         </div>
-        <div class="mobile navbar-closebtn">
+        <div class="mobile navbar-closebtn" onclick="closeNav()">
             <span><i class="fa fa-times"></i></span>
         </div>
     </div>
-    <div class="slider-bar">
+    <div class="content" id="content1">
+    </div>
+    <div class="content" id="content2">
+    </div>
+    <div class="content" id="content3">
+    </div>
+    <div class="content" id="content4">
+    </div>
+    <div class="slider-bar" id="slider">
         <div class="slider-closebtn">
-            <span><i class="fa fa-times"></i></span>
+            <span onclick="closeSlider()"><i class="fa fa-times"></i></span>
         </div>
         <div class="slider-content">
             <span class="slider-title gap">Belanja Gak Pake Pusing!</span>
@@ -38,4 +45,29 @@
     </div>
 </div>
 </body>
+<script>
+    function closeNav() {
+        var navbar = document.getElementById("navbar");
+        navbar.classList.add("navbar-hide");
+
+    }
+    function showSlider() {
+        var navbar = document.getElementById("slider");
+        navbar.classList.add("slider-show");
+    }
+    function closeSlider() {
+        var slider = document.getElementById("slider");
+        slider.classList.remove("slider-show");
+        slider.classList.add("slider-hide");
+        //let expire  = Date.now() + 600000;
+        //localStorage.setItem("expire", expire);
+    }
+
+    window.addEventListener("scroll", function(){
+        var scrolltarget = document.body.offsetHeight / 2
+        if(window.pageYOffset > scrolltarget){
+            showSlider()
+        }
+    }, false)
+</script>
 </html>
