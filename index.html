@@ -39,7 +39,7 @@
             <p>Yuk Daftarin Emailmu untuk melihat pilihan barang barang fashion murah dan terkini dari
             ribuan toko online terpercaya langsung ke email kamu
             </p>
-            <input class="input gap" type="text" placeholder="Masukkan email kamu ke sini"/>
+            <input class="input gap" type="text" placeholder="Masukkan email kamu disini"/>
             <button class="button slider-btn gap" >DAFTARKAN SEKARANG</button>
         </div>
     </div>
@@ -59,14 +59,17 @@
         var slider = document.getElementById("slider");
         slider.classList.remove("slider-show");
         slider.classList.add("slider-hide");
-        //let expire  = Date.now() + 600000;
-        //localStorage.setItem("expire", expire);
+        let expire  = Date.now() + 600000;
+        localStorage.setItem("expire", expire);
     }
 
     window.addEventListener("scroll", function(){
         var scrolltarget = document.body.offsetHeight / 2
         if(window.pageYOffset > scrolltarget){
-            showSlider()
+            let expire = localStorage.getItem('expire');
+            if(expire < Date.now()){
+                showSlider()
+            }
         }
     }, false)
 </script>

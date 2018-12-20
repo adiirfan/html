@@ -26,18 +26,6 @@ body
   text-rendering: $body-rendering
   text-size-adjust: 100%
   margin: 0px
-.content
-  height: 100vh
-  background-size: cover
-#content1
-  background-image: url("https://picsum.photos/g/960/540/?image=811")
-#content2
-  background-image: url("https://picsum.photos/g/960/540/?image=810")
-#content3
-  background-image: url("https://picsum.photos/g/960/540/?image=813")
-#content4
-  background-image: url("https://picsum.photos/g/960/540/?image=814")
-
 @font-face
   font-family: 'Font Awesome 5 Free'
   font-style: normal
@@ -52,6 +40,18 @@ body
 
 .fa-times:before
   content: "\f00d"
+
+.content
+  height: 100vh
+  background-size: cover
+#content1
+  background-image: url("https://picsum.photos/g/960/540/?image=811")
+#content2
+  background-image: url("https://picsum.photos/g/960/540/?image=810")
+#content3
+  background-image: url("https://picsum.photos/g/960/540/?image=813")
+#content4
+  background-image: url("https://picsum.photos/g/960/540/?image=814")
 
 .navbar-fixed
   left: 0
@@ -89,8 +89,6 @@ body
   align-items: center
   border: 1px solid transparent
   display: inline-flex
-  @media only screen and (max-width: 768px)
-    height: 1.5em
   height: 2.25em
   justify-content: flex-start
   line-height: 1.5
@@ -106,10 +104,10 @@ body
 .button
   cursor: pointer
   justify-content: center
-  padding-bottom: .375em
+  padding-bottom: 9px
   padding-left: 2em
   padding-right: 2em
-  padding-top: .375em
+  padding-top: 9px
   text-align: center
   white-space: nowrap
   color: $white
@@ -121,11 +119,12 @@ body
   background-color: orangered
 
 .slider-bar
-  height: 350px
-  width: 350px
+  height: 330px
+  width: 50%
   position: fixed
-  left: 2vw
+  left: 0vw
   background-color: $light-grey
+  font-size: 1.15em
 
 .slider-show
   -webkit-animation-name: sliderSlidetop
@@ -139,7 +138,7 @@ body
   -webkit-animation-duration: 2s
   animation-name: sliderSlidebottom
   animation-duration: 2s
-  bottom: -350px
+  bottom: -330px
 
 
 .slider-closebtn
@@ -169,11 +168,11 @@ body
     bottom: 0px
   100%
     display : none
-    bottom: -350px
+    bottom: -330px
 @-webkit-keyframes sliderSlidetop
   0%
     display : none
-    bottom: -350px
+    bottom: -330px
   100%
     bottom: 0px
 
@@ -202,11 +201,12 @@ body
     position: absolute
     top: 5px
     right : 15px
-  .slider-bar
-    width: 100vw
-    height: 300px
-    left: 0
-    right: 0
+  .navbar-hide
+    -webkit-animation-name: navSlidetop
+    -webkit-animation-duration: 2s
+    animation-name: navSlidetop
+    animation-duration: 2s
+    top: -100px
   #content1
     background-image: url("https://picsum.photos/g/540/960/?image=819")
   #content2
@@ -215,12 +215,11 @@ body
     background-image: url("https://picsum.photos/g/540/960/?image=817")
   #content4
     background-image: url("https://picsum.photos/g/540/960/?image=816")
-  .navbar-hide
-    -webkit-animation-name: navSlidetop
-    -webkit-animation-duration: 2s
-    animation-name: navSlidetop
-    animation-duration: 2s
-    top: -100px
+  .slider-bar
+    width: 100vw
+    height: 300px
+    left: 0
+    right: 0
   .slider-show
     -webkit-animation-name: sliderSlidetop
     -webkit-animation-duration: 2s
@@ -234,6 +233,7 @@ body
     animation-name: sliderSlidebottom
     animation-duration: 2s
     bottom: -300px
+
 
   @-webkit-keyframes navSlidetop
     0%

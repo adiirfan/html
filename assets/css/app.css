@@ -21,6 +21,23 @@ body {
   margin: 0px;
 }
 
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../webfonts/fa-solid-900.eot");
+  src: url("../webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.woff") format("woff"), url("../webfonts/fa-solid-900.ttf") format("truetype"), url("../webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+.fa,
+.fas {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.fa-times:before {
+  content: "";
+}
+
 .content {
   height: 100vh;
   background-size: cover;
@@ -40,23 +57,6 @@ body {
 
 #content4 {
   background-image: url("https://picsum.photos/g/960/540/?image=814");
-}
-
-@font-face {
-  font-family: "Font Awesome 5 Free";
-  font-style: normal;
-  font-weight: 900;
-  src: url("../webfonts/fa-solid-900.eot");
-  src: url("../webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.woff") format("woff"), url("../webfonts/fa-solid-900.ttf") format("truetype"), url("../webfonts/fa-solid-900.svg#fontawesome") format("svg");
-}
-.fa,
-.fas {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-}
-
-.fa-times:before {
-  content: "";
 }
 
 .navbar-fixed {
@@ -105,11 +105,6 @@ body {
   position: relative;
   vertical-align: top;
 }
-@media only screen and (max-width: 768px) {
-  .input {
-    height: 1.5em;
-  }
-}
 
 .input-nav {
   margin-right: 15px;
@@ -118,10 +113,10 @@ body {
 .button {
   cursor: pointer;
   justify-content: center;
-  padding-bottom: 0.375em;
+  padding-bottom: 9px;
   padding-left: 2em;
   padding-right: 2em;
-  padding-top: 0.375em;
+  padding-top: 9px;
   text-align: center;
   white-space: nowrap;
   color: white;
@@ -134,11 +129,12 @@ body {
 }
 
 .slider-bar {
-  height: 350px;
-  width: 350px;
+  height: 330px;
+  width: 50%;
   position: fixed;
-  left: 2vw;
+  left: 0vw;
   background-color: #dbdbdb;
+  font-size: 1.15em;
 }
 
 .slider-show {
@@ -154,7 +150,7 @@ body {
   -webkit-animation-duration: 2s;
   animation-name: sliderSlidebottom;
   animation-duration: 2s;
-  bottom: -350px;
+  bottom: -330px;
 }
 
 .slider-closebtn {
@@ -192,13 +188,13 @@ body {
   }
   100% {
     display: none;
-    bottom: -350px;
+    bottom: -330px;
   }
 }
 @-webkit-keyframes sliderSlidetop {
   0% {
     display: none;
-    bottom: -350px;
+    bottom: -330px;
   }
   100% {
     bottom: 0px;
@@ -243,11 +239,12 @@ body {
     right: 15px;
   }
 
-  .slider-bar {
-    width: 100vw;
-    height: 300px;
-    left: 0;
-    right: 0;
+  .navbar-hide {
+    -webkit-animation-name: navSlidetop;
+    -webkit-animation-duration: 2s;
+    animation-name: navSlidetop;
+    animation-duration: 2s;
+    top: -100px;
   }
 
   #content1 {
@@ -266,12 +263,11 @@ body {
     background-image: url("https://picsum.photos/g/540/960/?image=816");
   }
 
-  .navbar-hide {
-    -webkit-animation-name: navSlidetop;
-    -webkit-animation-duration: 2s;
-    animation-name: navSlidetop;
-    animation-duration: 2s;
-    top: -100px;
+  .slider-bar {
+    width: 100vw;
+    height: 300px;
+    left: 0;
+    right: 0;
   }
 
   .slider-show {
